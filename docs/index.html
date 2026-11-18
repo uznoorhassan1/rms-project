@@ -1,0 +1,47 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Restaurant Manager</title><link rel="stylesheet" href="style.css"></head><body>
+<aside><h1>Restaurant Manager</h1><nav>
+<a href="#dashboard">Dashboard</a><a href="#floor">Tables &amp; reservations</a><a href="#menu">Menu</a><a href="#order">New order</a><a href="#kitchen">Kitchen</a><a href="#billing">Billing</a><a href="#inventory">Inventory</a><a href="#staff">Staff &amp; shifts</a><a href="#reports">Reports</a></nav>
+<p class="who">Signed in as<br><b>Ayesha, Manager</b></p></aside>
+<main>
+<section id="dashboard"><h2>Dashboard</h2><p class="sub">Today at a glance</p>
+<div class="row"><div class="card"><b>6</b><span>Open orders</span></div><div class="card"><b>5 / 12</b><span>Tables occupied</span></div><div class="card"><b>Rs 48,200</b><span>Sales today</span></div><div class="card"><b>3</b><span>Items low in stock</span></div></div>
+<h3>Low stock</h3><div class="wrap"><table><tr><th>Ingredient</th><th>In stock</th><th>Reorder at</th></tr><tr><td>Chicken</td><td>4 kg</td><td>10 kg</td></tr><tr><td>Cooking oil</td><td>6 L</td><td>8 L</td></tr><tr><td>Flour</td><td>9 kg</td><td>10 kg</td></tr></table></div>
+<h3>Next reservations</h3><div class="wrap"><table><tr><th>Time</th><th>Customer</th><th>Guests</th><th>Table</th></tr><tr><td>7:30 PM</td><td>Hamza Ali</td><td>4</td><td>T3</td></tr><tr><td>8:00 PM</td><td>Sara Khan</td><td>2</td><td>T6</td></tr></table></div></section>
+
+<section id="floor"><h2>Tables &amp; reservations</h2><p class="sub">Click a table to seat guests or take an order.</p>
+<div class="board"><div class="t free"><b>T1</b><small>Available · 2 seats</small></div><div class="t occ"><b>T2</b><small>Occupied · 4 seats</small></div><div class="t res"><b>T3</b><small>Reserved 7:30 PM</small></div><div class="t occ"><b>T4</b><small>Occupied · 6 seats</small></div><div class="t free"><b>T5</b><small>Available · 4 seats</small></div><div class="t res"><b>T6</b><small>Reserved 8:00 PM</small></div></div>
+<div class="row" style="justify-content:space-between;align-items:center"><h3>Reservations</h3><button>New reservation</button></div>
+<div class="wrap"><table><tr><th>Customer</th><th>Phone</th><th>Date</th><th>Time</th><th>Guests</th><th>Table</th><th>Status</th></tr><tr><td>Hamza Ali</td><td>0300-1234567</td><td>18 Nov</td><td>7:30 PM</td><td>4</td><td>T3</td><td><span class="tag">Confirmed</span></td></tr><tr><td>Sara Khan</td><td>0321-7654321</td><td>18 Nov</td><td>8:00 PM</td><td>2</td><td>T6</td><td><span class="tag mid">Pending</span></td></tr></table></div></section>
+
+<section id="menu"><h2>Menu</h2><p class="sub">Items, prices and discounts</p>
+<div class="row" style="margin-bottom:12px"><select><option>All categories</option><option>Starters</option><option>Mains</option><option>Drinks</option></select><input placeholder="Search items"><button>Add item</button></div>
+<div class="wrap"><table><tr><th>Item</th><th>Category</th><th>Price</th><th>Discount</th><th>Available</th></tr><tr><td>Chicken karahi</td><td>Mains</td><td>Rs 1,450</td><td>—</td><td><span class="tag">Yes</span></td></tr><tr><td>Seekh kabab</td><td>Starters</td><td>Rs 650</td><td>10% until 30 Nov</td><td><span class="tag">Yes</span></td></tr><tr><td>Mint lemonade</td><td>Drinks</td><td>Rs 250</td><td>—</td><td><span class="tag low">Sold out</span></td></tr></table></div></section>
+
+<section id="order"><h2>New order</h2><p class="sub">Pick a table, add items, send to the kitchen.</p>
+<div class="split"><div><div class="row" style="margin-bottom:12px"><select><option>Table T2</option><option>Table T5</option></select><select><option>Dine-in</option><option>Takeaway</option></select></div>
+<div class="wrap"><table><tr><th>Item</th><th>Price</th><th></th></tr><tr><td>Chicken karahi</td><td>Rs 1,450</td><td><button class="alt">Add</button></td></tr><tr><td>Seekh kabab</td><td>Rs 650</td><td><button class="alt">Add</button></td></tr><tr><td>Mint lemonade</td><td>Rs 250</td><td><button class="alt">Add</button></td></tr></table></div></div>
+<div class="card"><h3 style="margin-top:0">Order for T2</h3><div class="line"><span>2 × Chicken karahi</span><span>Rs 2,900</span></div><div class="line"><span>1 × Seekh kabab</span><span>Rs 650</span></div><div class="line"><span>Notes</span><span>No chilli</span></div><div class="line tot"><span>Subtotal</span><span>Rs 3,550</span></div><p><button>Send to kitchen</button></p></div></div></section>
+
+<section id="kitchen"><h2>Kitchen</h2><p class="sub">Orders refresh every few seconds.</p>
+<div class="cols"><div class="col"><b>Pending</b><div class="tk">#104 · T2<br>2 × Chicken karahi<br><button>Start cooking</button></div></div><div class="col"><b>Cooking</b><div class="tk">#103 · T4<br>3 × Seekh kabab<br><button>Mark ready</button></div></div><div class="col"><b>Ready to serve</b><div class="tk">#102 · T1<br>1 × Mint lemonade<br><button>Mark served</button></div></div></div></section>
+
+<section id="billing"><h2>Billing</h2><p class="sub">Bill for table T4</p>
+<div class="split"><div class="card"><div class="line"><span>3 × Seekh kabab</span><span>Rs 1,950</span></div><div class="line"><span>2 × Mint lemonade</span><span>Rs 500</span></div><div class="line"><span>Discount (10%)</span><span>− Rs 245</span></div><div class="line"><span>Tax (16%)</span><span>Rs 353</span></div><div class="line tot"><span>Total</span><span>Rs 2,558</span></div></div>
+<div class="card"><h3 style="margin-top:0">Payment</h3><p><select><option>Cash</option><option>Card</option><option>Mobile wallet</option></select></p><p>Split between <input type="number" value="2" min="1" style="width:60px"> people</p><div class="line"><span>Guest 1</span><span>Rs 1,279</span></div><div class="line"><span>Guest 2</span><span>Rs 1,279</span></div><p><button>Take payment</button></p></div></div></section>
+
+<section id="inventory"><h2>Inventory</h2><p class="sub">Stock levels, suppliers and restocking</p>
+<div class="wrap"><table><tr><th>Ingredient</th><th>In stock</th><th>Reorder at</th><th>Supplier</th><th>Status</th></tr><tr><td>Chicken</td><td>4 kg</td><td>10 kg</td><td>Fresh Farms</td><td><span class="tag low">Reorder</span></td></tr><tr><td>Cooking oil</td><td>6 L</td><td>8 L</td><td>City Traders</td><td><span class="tag mid">Low</span></td></tr><tr><td>Rice</td><td>40 kg</td><td>15 kg</td><td>City Traders</td><td><span class="tag">OK</span></td></tr></table></div>
+<div class="row" style="justify-content:space-between;align-items:center"><h3>Purchase orders</h3><button>New purchase order</button></div>
+<div class="wrap"><table><tr><th>PO</th><th>Supplier</th><th>Date</th><th>Total</th><th>Status</th></tr><tr><td>PO-021</td><td>Fresh Farms</td><td>16 Nov</td><td>Rs 18,000</td><td><span class="tag mid">Sent</span></td></tr><tr><td>PO-020</td><td>City Traders</td><td>10 Nov</td><td>Rs 9,400</td><td><span class="tag">Received</span></td></tr></table></div></section>
+
+<section id="staff"><h2>Staff &amp; shifts</h2><p class="sub">Employees, roles and this week's schedule</p>
+<div class="wrap"><table><tr><th>Name</th><th>Role</th><th>Phone</th><th>Hourly rate</th><th>Active</th></tr><tr><td>Ayesha Noor</td><td>Manager</td><td>0300-1111111</td><td>Rs 900</td><td>Yes</td></tr><tr><td>Bilal Raza</td><td>Waiter</td><td>0311-2222222</td><td>Rs 500</td><td>Yes</td></tr><tr><td>Chef Imran</td><td>Chef</td><td>0322-3333333</td><td>Rs 800</td><td>Yes</td></tr></table></div>
+<h3>Shifts</h3><div class="wrap"><table><tr><th>Date</th><th>Employee</th><th>Type</th><th>Start</th><th>End</th></tr><tr><td>18 Nov</td><td>Bilal Raza</td><td>Evening</td><td>4:00 PM</td><td>12:00 AM</td></tr><tr><td>18 Nov</td><td>Chef Imran</td><td>Evening</td><td>3:00 PM</td><td>11:00 PM</td></tr></table></div></section>
+
+<section id="reports"><h2>Reports</h2><p class="sub">Placeholder charts, real queries come later</p>
+<div class="row"><div class="card"><h3 style="margin-top:0">Daily sales</h3>Mon<div class="bar" style="width:55%"></div>Tue<div class="bar" style="width:70%"></div>Wed<div class="bar" style="width:90%"></div></div><div class="card"><h3 style="margin-top:0">Best-selling items</h3>Chicken karahi<div class="bar" style="width:90%"></div>Seekh kabab<div class="bar" style="width:65%"></div>Mint lemonade<div class="bar" style="width:40%"></div></div></div>
+<div class="row" style="margin-top:14px"><div class="card"><h3 style="margin-top:0">Table utilisation</h3>Reports also planned: stock usage and staff hours.</div></div></section>
+</main>
+<button id="chatBtn">Ask assistant</button>
+<div id="chat" role="dialog" aria-label="Assistant"><header>Restaurant assistant</header><div id="msgs"><div class="m bot">Hi! Ask me how to take an order, split a bill or restock an item.</div></div><form id="chatForm"><input name="q" placeholder="Type your question" aria-label="Your question"><button>Send</button></form></div>
+<script src="app.js"></script></body></html>
