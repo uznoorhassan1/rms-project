@@ -27,3 +27,5 @@ select,input{border:1px solid var(--line);border-radius:6px;padding:7px 9px;back
 #msgs{padding:12px;overflow:auto;flex:1;min-height:180px}.m{padding:8px 10px;border-radius:8px;margin-bottom:8px;max-width:85%}.bot{background:var(--acc2)}.me{background:var(--ink);color:#fff;margin-left:auto}
 #chat form{display:flex;gap:6px;padding:10px;border-top:1px solid var(--line)}#chat input{flex:1}
 @media(max-width:760px){body{flex-direction:column}aside{width:100%;height:auto;position:static}aside nav{flex-direction:row;flex-wrap:wrap}.split{grid-template-columns:1fr}main{padding:18px}}
+
+body.lg{align-items:center;justify-content:center;padding:20px}.login{max-width:360px;width:100%;flex:none}#out{color:#9fb2ae;font-size:13px}
