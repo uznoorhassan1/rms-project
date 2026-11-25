@@ -1,6 +1,7 @@
+<!-- Owner: Lead -->
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sign in</title><link rel="stylesheet" href="style.css"></head><body class="lg">
 <form id="f" class="card login"><h2>Restaurant Manager</h2><p class="sub">Sign in to continue</p>
 <label>Email<br><input type="email" required style="width:100%"></label><p><label>Password<br><input type="password" required style="width:100%"></label></p>
 <p><label>Preview as<br><select id="role" style="width:100%"><option value="manager">Manager</option><option value="waiter">Waiter</option><option value="chef">Chef</option><option value="customer">Customer</option></select></label></p>
 <button style="width:100%">Sign in</button><p class="sub" style="margin-top:10px;font-size:13px">The role picker is for this prototype only. In the real app, your account decides your role.</p></form>
-<script>document.getElementById('f').onsubmit=e=>{e.preventDefault();sessionStorage.setItem('role',document.getElementById('role').value);location.href='index.html';};</script></body></html>
+<script>document.getElementById('f').onsubmit=e=>{e.preventDefault();sessionStorage.setItem('role',document.getElementById('role').value);location.href={manager:'dashboard',waiter:'floor',chef:'kitchen',customer:'myres'}[document.getElementById('role').value]+'.html';};</script></body></html>
