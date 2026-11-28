@@ -1,0 +1,9 @@
+{% load static %}<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Restaurant Manager</title><link rel="stylesheet" href="{% static 'css/style.css' %}"></head><body class="lg">
+<form method="post" class="card login">{% csrf_token %}<input type="hidden" name="next" value="{{ next }}">
+<h2>Restaurant Manager</h2><p class="sub">Sign in to continue</p>
+{% if form.errors %}<p style="color:#b83232">Enter a valid email and password.</p>{% endif %}
+<label>Email<br><input type="email" name="username" required style="width:100%"></label>
+<p><label>Password<br><input type="password" name="password" id="pw" required style="width:100%"></label>
+<label style="font-size:13px"><input type="checkbox" onclick="pw.type=this.checked?'text':'password'"> Show password</label></p>
+<button style="width:100%">Sign in</button>
+<p class="sub" style="margin-top:10px">New customer? <a href="{% url 'signup' %}">Create an account</a></p></form></body></html>

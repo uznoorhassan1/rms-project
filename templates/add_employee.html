@@ -1,0 +1,4 @@
+{% load static %}<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Restaurant Manager</title><link rel="stylesheet" href="{% static 'css/style.css' %}"></head><body class="lg">
+<form method="post" class="card login" style="max-width:420px">{% csrf_token %}
+<h2>Add employee</h2>{% if done %}<p style="color:#2f855a">Added {{ done }}.</p>{% endif %}
+{{ form.as_p }}<p><button style="width:100%">Add employee</button></p><p class="sub"><a href="{% url 'home' %}">Back</a></p></form></body></html>
