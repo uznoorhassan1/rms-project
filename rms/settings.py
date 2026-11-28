@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'billing',
     'inventory',
     'reports',
+    'core',
 ]
 
 MIDDLEWARE = [
@@ -63,7 +64,7 @@ ROOT_URLCONF = 'rms.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -138,3 +139,8 @@ MAILERS = {
         'BACKEND': 'django.core.mail.backends.console.EmailBackend',
     },
 }
+
+STATIC_URL = 'static/'
+STATICFILES_DIRS = [BASE_DIR / 'static']
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'home'

@@ -1,22 +1,20 @@
-"""
-URL configuration for rms project.
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/6.1/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
 from django.contrib import admin
-from django.urls import path
+from django.contrib.auth.views import LogoutView
+from django.urls import include, path
+from staff import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path("admin/", admin.site.urls),
+    path("login/", views.RoleLoginView.as_view(), name="login"),
+    path("logout/", LogoutView.as_view(), name="logout"),
+    path("signup/", views.signup, name="signup"),
+    path("add-employee/", views.add_employee, name="add_employee"),
+    path("assistant/", views.assistant, name="assistant"),
+    # One line per module. Each owner only edits their own app's urls.py, never this file.
+    path("reservations/", include("floor.urls")),    # Member 2
+    path("menu/", include("menu.urls")),             # Member 3
+    path("orders/", include("orders.urls")),         # Member 3
+    path("billing/", include("billing.urls")),       # Member 4
+    path("inventory/", include("inventory.urls")),   # Member 4
+    path("", views.home, name="home"),
 ]

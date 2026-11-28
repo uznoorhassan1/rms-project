@@ -1,0 +1,5 @@
+{% load static %}<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Restaurant Manager</title><link rel="stylesheet" href="{% static 'css/style.css' %}"></head><body class="lg">
+<form method="post" class="card login" style="max-width:420px">{% csrf_token %}
+<h2>Create account</h2><p class="sub">For customers. Staff accounts are created by a manager.</p>
+{{ form.as_p }}<label style="font-size:13px"><input type="checkbox" onclick="document.querySelectorAll('input[type=password],input[data-p]').forEach(i=>{i.dataset.p=1;i.type=this.checked?'text':'password'})"> Show passwords</label>
+<p><button style="width:100%">Sign up</button></p><p class="sub"><a href="{% url 'login' %}">Back to sign in</a></p></form></body></html>

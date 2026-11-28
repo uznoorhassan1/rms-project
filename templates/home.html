@@ -1,0 +1,11 @@
+{% load static %}<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Restaurant Manager</title><link rel="stylesheet" href="{% static 'css/style.css' %}"></head>
+<body><main><h2>Welcome, {{ user.first_name|default:user.email }}</h2><p class="sub">You are signed in as: <b>{{ role|default:"no role" }}</b></p>
+<div class="card"><h3 style="margin-top:0">Your pages</h3>
+{% if role == "manager" or role == "waiter" or role == "customer" %}<p><a href="/reservations/">Reservations</a></p>{% endif %}
+{% if role %}<p><a href="/menu/">Menu</a></p>{% endif %}
+{% if role == "manager" or role == "waiter" or role == "chef" %}<p><a href="/orders/">Orders</a></p>{% endif %}
+{% if role == "manager" or role == "waiter" or role == "customer" %}<p><a href="/billing/">Billing</a></p>{% endif %}
+{% if role == "manager" or role == "chef" %}<p><a href="/inventory/">Inventory</a></p>{% endif %}
+{% if role == "manager" %}<p><a href="{% url 'add_employee' %}">Add employee</a></p>{% endif %}
+<form method="post" action="{% url 'logout' %}">{% csrf_token %}<button>Sign out</button></form></div></main>
+{% include "chat.html" %}</body></html>
